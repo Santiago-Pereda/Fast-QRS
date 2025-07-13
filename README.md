@@ -1,7 +1,6 @@
-# Fast-QRS
-This repository contains the following matlab m-files for the replication of the simulations in "Fast Algorithms for Quantile Regression with Selection" Pereda-Fernández (2024)
+This repository contains the following matlab m-files for the replication of the simulations in "Fast Algorithms for Quantile Regression with Selection" Pereda-Fernández (2025)
 
-The working paper version of the article can be accessed at https://arxiv.org/abs/2402.16693
+The article can be accessed at https://www.degruyterbrill.com/document/doi/10.1515/jem-2024-0022/html
 
 The folder "Matlab files" contains all the functions that are needed to compute the Quantile Regression with Selection estimator. In particular, it includes the estimator without any time-saving algorithm (qrs.m), Algorithm 1 (rqrtau_fast.m), Algorithm 2 (rqr_fast.m), Algorithm 3 (qrs_fast_bt.m), and Algorithm 4 (qrs_fast_bt) for the bootstrap . In addition, it includes all the other necessary files that are used by these functions:
 
