@@ -24,16 +24,19 @@ P=10;
 %Parameter for bootstrap weights
 gampar=10;
 
+%Number of bootstrap repetitions
+reps=200;
+
 %Generate sample
-betar=rand(k-1,1);
+betar=rand(K-1,1);
 beta0=[norminv(gridq);betar*gridq];
 
-x=[ones(N,1),2+rand(N,k-1)];
+x=[ones(N,1),2+rand(N,K-1)];
 z=[x,rand(N,1)];
 copu=copularnd('Gaussian',theta0,N);
 v=copu(:,1);
 u=copu(:,2);
-gamma=[-1.5;.1*rand(k-1,1);2];
+gamma=[-1.5;.1*rand(K-1,1);2];
 beta=[norminv(u),u.^(ones(N,1))*betar'];
 prop=exp(z*gamma)./(1+exp(z*gamma));
 d=double(v<=prop);
@@ -44,4 +47,4 @@ w=ones(N,1);
 [betahat1,thetahat1,~,bhat1]=qrs_fast(y(d==1,:),x(d==1,:),prop(d==1,:),w(d==1,:),Q1,Q2,P,family,gridtheta,m);
 
 %Compute bootstrap estimates with Algorithm 4
-[betahat1_b,thetahat1_b,~]=qrs_fast_bt(y(d==1,:),x(d==1,:),prop(d==1,:),w(d==1,:),Q1,Q2,P,family,gridtheta,m,bhat2,reps2,gampar);
+[betahat1_b,thetahat1_b,~]=qrs_fast_bt(y(d==1,:),x(d==1,:),prop(d==1,:),w(d==1,:),Q1,Q2,P,family,gridtheta,m,bhat1,reps,gampar);
