@@ -29,7 +29,7 @@ family='Gaussian';
 %Parameter to select interval of observations in top and bottom groups
 m=1;
 
-%number of evaluated values of parameter with large quantile grid
+%Number of evaluated values of parameter with large quantile grid
 P=10;
 
 times=zeros(nexp,4,reps);
@@ -99,7 +99,7 @@ for i1=1:1:nexp
         
         %Fourth estimation: algorithm with preprocessing and grid
         %reduction, several candidate selected with smaller quantile grid 
-        %(Algorithm 4)
+        %(Algorithm 3)
         start4=tic;
         [b_4,theta_4,m_4]=qrs_fast(y(d==1,:),x(d==1,:),prop(d==1,:),w(d==1,:),Q1,Q2,P,family,gridtheta,m);
         times_b(4,1)=toc(start4);

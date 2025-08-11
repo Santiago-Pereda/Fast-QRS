@@ -1,16 +1,27 @@
 function rho=checks_rqr(y,x,prop,w,nq,family,t,b)
 
 %Check function for RQR estimates
+%
 %Input:
+%
 %y=dependent variable
+%
 %x=regressors
+%
 %prop=propensity score
+%
 %w=sample weights
+%
 %nq=number of quantiles in grid
+%
 %family=copula family
+%
 %t=copula parameter
+%
 %b=RQR coefficients
+%
 %Output:
+%
 %rho=value of the rotated check function
 
 [N,~]=size(x);

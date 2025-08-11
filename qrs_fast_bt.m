@@ -35,6 +35,10 @@ function [beta,theta,objf_min,b1,objf1,gridtheta2,b2,objf2] = qrs_fast_bt(y,x,pr
 %b0 = initial value for the beta parameters (usually, the estimated beta
 %coefficients)
 %
+%reps = number of repetitions
+%
+%gampar = gamma distribution parameter used for the weights
+%
 %
 %Output:
 %
